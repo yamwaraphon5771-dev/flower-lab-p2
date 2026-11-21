@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="th" data-tsd-source="/src/routes/__root.tsx:113:5"><head data-tsd-source="/src/routes/__root.tsx:114:7"><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/assets/styles-BiJWKLqi.css" data-precedence="default"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mali:wght@500;600;700&amp;family=Noto+Sans+Thai+Looped:wght@400;600;700&amp;display=swap" data-precedence="default"/><title>ห้องเรียนจำลอง: ส่วนประกอบของดอกไม้แสนสนุก | วิทยาศาสตร์ ป.4</title><meta name="description" content="หมุน ซูม สำรวจดอกไม้ 3 มิติ เรียนรู้ 4 ส่วนของดอก ชนิดของดอกไม้ และเล่นเกมทายใจนักวิทย์ สำหรับนักเรียนชั้น ป.4"/><meta property="og:title" content="ห้องเรียนจำลอง: ส่วนประกอบของดอกไม้แสนสนุก | วิทยาศาสตร์ ป.4"/><meta property="og:description" content="หมุน ซูม สำรวจดอกไม้ 3 มิติ เรียนรู้ 4 ส่วนของดอก ชนิดของดอกไม้ และเล่นเกมทายใจนักวิทย์ สำหรับนักเรียนชั้น ป.4"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><link rel="modulepreload" href="/assets/index-B9Zb3LJQ.js"/><link rel="modulepreload" href="/assets/routes-DxKy2NQC.js"/><link rel="icon" href="/favicon.ico" type="image/x-icon"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+<style>
+	#lovable-badge {
+		--badge-bg: #1b1b1b;
+		--badge-text: #c5c1b9;
+		--badge-text-hover: #dcdad5;
+		--badge-radius: 6px;
+		--badge-padding: 8px;
+		--badge-gap: 6px;
+		--badge-shadow: 
+			0 0 0 1px rgba(0, 0, 0, 0.88),
+			0 1px 0 0 rgba(0, 0, 0, 0.04),
+			0 2px 2px -1px rgba(0, 0, 0, 0.08),
+			0 4px 4px -2px rgba(0, 0, 0, 0.08),
+			0 8px 8px -4px rgba(0, 0, 0, 0.08),
+			0 16px 16px -8px rgba(0, 0, 0, 0.08);
+		--badge-transition-duration: 0.2s;
+		--badge-transition-easing: cubic-bezier(0.16, 1, 0.32, 1);
+		--focus-color: #575ECF;
+		--focus-offset: 2px;
+		--focus-width: 2px;
+		
+		position: fixed;
+		bottom: 12px;
+		right: 12px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		z-index: 1000000;
+		background-color: var(--badge-bg) !important;
+		color: var(--badge-text) !important;
+		border-radius: var(--badge-radius);
+		box-shadow: var(--badge-shadow) !important;
+		font-size: 12px;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		font-weight: 400 !important;
+		text-transform: none !important;
+		font-feature-settings: normal !important;
+		transform: translateZ(0);
+		will-change: transform, opacity;
+		transition: opacity var(--badge-transition-duration) var(--badge-transition-easing);
+	}
+
+	#lovable-badge.closing {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	#lovable-badge-cta {
+		display: flex;
+		align-items: baseline;
+		gap: var(--badge-gap);
+		box-sizing: border-box;
+		padding: 4px var(--badge-padding) 0;
+		height: 100%;
+		color: inherit;
+		text-decoration: none;
+		white-space: nowrap;
+		border-radius: var(--badge-radius) 0 0 var(--badge-radius);
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-cta:hover {
+		background: rgba(255, 255, 255, 0.04);
+		color: var(--badge-text-hover);
+	}
+
+	#lovable-badge-cta:active {
+		transform: scale(0.98);
+	}
+
+	#lovable-badge-cta:focus {
+		outline: none;
+	}
+
+	#lovable-badge-cta:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: var(--focus-offset);
+		z-index: 1;
+	}
+
+	#lovable-badge-text {
+		line-height: 1;
+	}
+
+	/* The wordmark baseline sits at y=12 of the 16px logo; an empty 12px box
+	   makes that the flex baseline so the text aligns to it on any system font. */
+	#lovable-badge-logo {
+		position: relative;
+		display: block;
+		width: 52px;
+		height: 12px;
+	}
+
+	#lovable-badge-logo svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	#lovable-badge-divider {
+		width: 1px;
+		height: 24px;
+		background-color: rgba(255, 255, 255, 0.04);
+		flex-shrink: 0;
+	}
+
+	#lovable-badge-close {
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+		min-height: 24px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0 var(--badge-radius) var(--badge-radius) 0;
+		flex-shrink: 0;
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-close:hover {
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	#lovable-badge-close:active {
+		transform: scale(0.92);
+	}
+
+	#lovable-badge-close:focus {
+		outline: none;
+	}
+
+	#lovable-badge-close:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: calc(var(--focus-offset) * -1);
+		z-index: 1;
+	}
+
+	#lovable-badge-close svg path {
+		fill: var(--badge-text);
+		transition: fill var(--badge-transition-duration) ease;
+	}
+
+	#lovable-badge-close:hover svg path {
+		fill: var(--badge-text-hover);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		#lovable-badge,
+		#lovable-badge-cta,
+		#lovable-badge-close,
+		#lovable-badge-close svg path {
+			transition: none;
+		}
+		
+		#lovable-badge-cta:active,
+		#lovable-badge-close:active {
+			transform: none;
+		}
+	}
+
+	@media (prefers-contrast: high) {
+		#lovable-badge {
+			--badge-bg: #000;
+			--badge-text: #fff;
+			--badge-text-hover: #fff;
+			border: 2px solid currentColor;
+		}
+		
+		#lovable-badge-cta:focus-visible,
+		#lovable-badge-close:focus-visible {
+			outline-width: 3px;
+		}
+	}
+</style>
+<script defer src="/__l5e/events.b979ee024b15adfd.js" data-artifact-kind="static_preview" data-artifact-id="0b69d16ff6071fb7d336f4bcee3135c581fafff4" data-commit-sha="0b69d16ff6071fb7d336f4bcee3135c581fafff4" data-context-token="v1.eyJwcm9qZWN0X2lkIjoibG92cF8xeHQyNWJ0cXBwODV0YW12cjNrMGc3dnY2eCIsImFydGlmYWN0X2tpbmQiOiJzdGF0aWNfcHJldmlldyIsImFydGlmYWN0X2lkIjoiMGI2OWQxNmZmNjA3MWZiN2QzMzZmNGJjZWUzMTM1YzU4MWZhZmZmNCIsImNvbW1pdF9zaGEiOiIwYjY5ZDE2ZmY2MDcxZmI3ZDMzNmY0YmNlZTMxMzVjNTgxZmFmZmY0IiwiZXhwIjoxNzk1MjY5NjY0fQ.lD_OYRPpSOgMAYCFqGWDotZ92cRIT8Jdr40aqLJSKQE" data-track-url="/__l5e/trackevents?__lovable_sha=0b69d16ff6071fb7d336f4bcee3135c581fafff4" data-consent="1"></script><meta name="twitter:title" content="ห้องเรียนจำลอง: ส่วนประกอบของดอกไม้แสนสนุก | วิทยาศาสตร์ ป.4"><meta name="twitter:description" content="หมุน ซูม สำรวจดอกไม้ 3 มิติ เรียนรู้ 4 ส่วนของดอก ชนิดของดอกไม้ และเล่นเกมทายใจนักวิทย์ สำหรับนักเรียนชั้น ป.4"><meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_1xt25btqpp85tamvr3k0g7vv6x/afb968accb0dee88d6883826a12cbd80_1795247800175.png"><meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_1xt25btqpp85tamvr3k0g7vv6x/afb968accb0dee88d6883826a12cbd80_1795247800175.png"></head><body data-tsd-source="/src/routes/__root.tsx:117:7"><!--$--><div class="min-h-screen" data-tsd-source="/src/routes/index.tsx:26:5"><header class="mx-auto flex max-w-7xl items-center gap-3 px-4 pt-5 pb-3 sm:gap-4 sm:px-6 sm:pt-7" data-tsd-source="/src/routes/index.tsx:27:7"><div class="relative grid size-14 shrink-0 place-items-center rounded-3xl bg-blossom text-accent-foreground shadow-pop-blossom sm:size-16" data-tsd-source="/src/routes/index.tsx:28:9"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flower size-8 animate-float-slow" aria-hidden="true" data-tsd-source="/src/routes/index.tsx:29:11"><circle cx="12" cy="12" r="3"></circle><path d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5"></path><path d="M12 7.5V9"></path><path d="M7.5 12H9"></path><path d="M16.5 12H15"></path><path d="M12 16.5V15"></path><path d="m8 8 1.88 1.88"></path><path d="M14.12 9.88 16 8"></path><path d="m8 16 1.88-1.88"></path><path d="M14.12 14.12 16 16"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf absolute -right-2 -bottom-2 size-6 rotate-12 text-leaf" aria-hidden="true" data-tsd-source="/src/routes/index.tsx:30:11"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg></div><div class="min-w-0" data-tsd-source="/src/routes/index.tsx:32:9"><p class="inline-block rounded-full bg-sun px-3 text-sm font-semibold text-secondary-foreground" data-tsd-source="/src/routes/index.tsx:33:11">วิทยาศาสตร์ ป.4</p><h1 class="text-2xl font-bold text-primary-deep sm:text-3xl lg:text-4xl" data-tsd-source="/src/routes/index.tsx:36:11">ห้องเรียนจำลอง: <span class="text-blossom" data-tsd-source="/src/routes/index.tsx:37:29">ส่วนประกอบของดอกไม้แสนสนุก</span></h1></div></header><main class="mx-auto grid max-w-7xl gap-5 px-4 pb-10 sm:px-6 md:grid-cols-[11fr_9fr] md:items-start lg:gap-7" data-tsd-source="/src/routes/index.tsx:42:7"><div data-tsd-source="/src/routes/index.tsx:43:9"><section aria-labelledby="explore-title" class="flex flex-col gap-4" data-tsd-source="/src/components/lab/ModelExplorer.tsx:11:5"><h2 id="explore-title" class="sr-only" data-tsd-source="/src/components/lab/ModelExplorer.tsx:12:7">พื้นที่สำรวจโมเดลดอกไม้ 3 มิติ</h2><div class="rounded-3xl border-2 border-sun bg-sun-soft p-4" data-tsd-source="/src/components/lab/ModelExplorer.tsx:17:7"><p class="mb-2 font-display text-lg font-semibold text-secondary-foreground" data-tsd-source="/src/components/lab/ModelExplorer.tsx:18:9">วิธีเล่นง่าย ๆ</p><ul class="grid gap-2 sm:grid-cols-2" data-tsd-source="/src/components/lab/ModelExplorer.tsx:19:9"><li class="flex items-center gap-3 rounded-2xl bg-card px-3 py-2" data-tsd-source="/src/components/lab/ModelExplorer.tsx:20:11"><span class="grid size-10 shrink-0 place-items-center rounded-full bg-leaf-soft text-primary-deep" data-tsd-source="/src/components/lab/ModelExplorer.tsx:21:13"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand size-5" aria-hidden="true" data-tsd-source="/src/components/lab/ModelExplorer.tsx:22:15"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"></path><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"></path><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"></path><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path></svg></span><span data-tsd-source="/src/components/lab/ModelExplorer.tsx:24:13"><b data-tsd-source="/src/components/lab/ModelExplorer.tsx:25:15">ลาก 1 นิ้ว</b> = หมุนดูรอบดอกไม้</span></li><li class="flex items-center gap-3 rounded-2xl bg-card px-3 py-2" data-tsd-source="/src/components/lab/ModelExplorer.tsx:28:11"><span class="grid size-10 shrink-0 place-items-center rounded-full bg-blossom-soft text-blossom" data-tsd-source="/src/components/lab/ModelExplorer.tsx:29:13"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zoom-in size-5" aria-hidden="true" data-tsd-source="/src/components/lab/ModelExplorer.tsx:30:15"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span><span data-tsd-source="/src/components/lab/ModelExplorer.tsx:32:13"><b data-tsd-source="/src/components/lab/ModelExplorer.tsx:33:15">ถ่าง/หุบ 2 นิ้ว</b> = ซูมดูใกล้ ๆ</span></li></ul><p class="mt-3 flex items-start gap-2 text-sm text-secondary-foreground" data-tsd-source="/src/components/lab/ModelExplorer.tsx:37:9"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages mt-1 size-4 shrink-0" aria-hidden="true" data-tsd-source="/src/components/lab/ModelExplorer.tsx:38:11"><path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path></svg><span data-tsd-source="/src/components/lab/ModelExplorer.tsx:39:11">ป้ายบนโมเดล 3 มิติเป็นภาษาอังกฤษ กดอ่านคำแปลและคำอธิบายภาษาไทยได้ที่<b class="hidden md:inline" data-tsd-source="/src/components/lab/ModelExplorer.tsx:41:13"> แถบเมนูด้านขวามือ</b><b class="md:hidden" data-tsd-source="/src/components/lab/ModelExplorer.tsx:42:13"> แถบเมนูด้านล่าง</b> เลยนะ</span></p></div><figure class="overflow-hidden rounded-3xl border-4 border-card bg-ink shadow-soft" data-tsd-source="/src/components/lab/ModelExplorer.tsx:48:7"><div class="relative aspect-[4/3] w-full lg:aspect-[5/4]" data-tsd-source="/src/components/lab/ModelExplorer.tsx:49:9"><iframe title="Anatomy of a Flower" src="https://sketchfab.com/models/4ce0afd091d742e286a0de156e183d95/embed?ui_theme=dark&amp;ui_infos=0&amp;ui_watermark_link=0" class="absolute inset-0 h-full w-full" allow="autoplay; fullscreen; xr-spatial-tracking" allowFullScreen="" loading="lazy" data-tsd-source="/src/components/lab/ModelExplorer.tsx:50:11"></iframe></div><figcaption class="bg-card px-4 py-2 text-xs text-muted-foreground" data-tsd-source="/src/components/lab/ModelExplorer.tsx:59:9">โมเดล<!-- --> <a href="https://sketchfab.com/3d-models/anatomy-of-a-flower-4ce0afd091d742e286a0de156e183d95" target="_blank" rel="nofollow noreferrer" class="font-semibold text-primary-deep underline-offset-2 hover:underline" data-tsd-source="/src/components/lab/ModelExplorer.tsx:61:11">Anatomy of a Flower</a> <!-- -->โดย<!-- --> <a href="https://sketchfab.com/arloopa" target="_blank" rel="nofollow noreferrer" class="font-semibold text-primary-deep underline-offset-2 hover:underline" data-tsd-source="/src/components/lab/ModelExplorer.tsx:70:11">arloopa</a> <!-- -->บน<!-- --> <a href="https://sketchfab.com" target="_blank" rel="nofollow noreferrer" class="font-semibold text-primary-deep underline-offset-2 hover:underline" data-tsd-source="/src/components/lab/ModelExplorer.tsx:79:11">Sketchfab</a></figcaption></figure><div class="rounded-3xl border-2 border-leaf bg-card p-4 sm:p-5" data-tsd-source="/src/components/lab/ModelExplorer.tsx:101:5"><div class="mb-3 flex items-center justify-between gap-3" data-tsd-source="/src/components/lab/ModelExplorer.tsx:102:7"><h3 class="flex items-center gap-2 text-lg font-bold text-primary-deep sm:text-xl" data-tsd-source="/src/components/lab/ModelExplorer.tsx:103:9"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass size-6" aria-hidden="true" data-tsd-source="/src/components/lab/ModelExplorer.tsx:104:11"><circle cx="12" cy="12" r="10"></circle><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"></path></svg>ภารกิจนักสำรวจตัวน้อย</h3><span class="shrink-0 whitespace-nowrap rounded-full bg-leaf-soft px-3 py-1 text-sm font-semibold text-primary-deep" data-tsd-source="/src/components/lab/ModelExplorer.tsx:107:9">สำเร็จ <!-- -->0<!-- -->/<!-- -->3</span></div><ol class="flex flex-col gap-3" data-tsd-source="/src/components/lab/ModelExplorer.tsx:111:7"><li class="rounded-2xl border-2 p-3 transition-colors border-border bg-background" data-tsd-source="/src/components/lab/ModelExplorer.tsx:116:13"><div class="flex gap-3" data-tsd-source="/src/components/lab/ModelExplorer.tsx:123:15"><button type="button" aria-pressed="false" aria-label="ทำภารกิจที่ 1 สำเร็จแล้ว" class="grid size-11 shrink-0 place-items-center rounded-full font-display text-lg font-bold transition-all active:scale-90 bg-sun text-secondary-foreground" data-tsd-source="/src/components/lab/ModelExplorer.tsx:124:17">1</button><p class="pt-1.5 leading-relaxed" data-tsd-source="/src/components/lab/ModelExplorer.tsx:136:17">ลองหมุนและซูมดูส่วนต่าง ๆ ของดอกไม้ แล้วทายสิว่าส่วนไหนมีสีสันสดใสช่วยล่อแมลง?</p></div><div class="mt-2 flex flex-wrap gap-2 pl-14" data-tsd-source="/src/components/lab/ModelExplorer.tsx:138:15"><button type="button" aria-expanded="false" class="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-sun-soft px-4 text-sm font-semibold text-secondary-foreground transition-colors hover:bg-sun" data-tsd-source="/src/components/lab/ModelExplorer.tsx:139:17"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb size-4" aria-hidden="true" data-tsd-source="/src/components/lab/ModelExplorer.tsx:145:19"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>ดูคำใบ้</button></div></li><li class="rounded-2xl border-2 p-3 transition-colors border-border bg-background" data-tsd-source="/src/components/lab/ModelExplorer.tsx:116:13"><div class="flex gap-3" data-tsd-source="/src/components/lab/ModelExplorer.tsx:123:15"><button type="button" aria-pressed="false" aria-label="ทำภารกิจที่ 2 สำเร็จแล้ว" class="grid size-11 shrink-0 place-items-center rounded-full font-display text-lg font-bold transition-all active:scale-90 bg-sun text-secondary-foreground" data-tsd-source="/src/components/lab/ModelExplorer.tsx:124:17">2</button><p class="pt-1.5 leading-relaxed" data-tsd-source="/src/components/lab/ModelExplorer.tsx:136:17">หาส่วนสีเขียวที่อยู่วงนอกสุด ใต้กลีบดอก มันชื่อว่าอะไรนะ?</p></div><div class="mt-2 flex flex-wrap gap-2 pl-14" data-tsd-source="/src/components/lab/ModelExplorer.tsx:138:15"><button type="button" aria-expanded="false" class="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-sun-soft px-4 text-sm font-semibold text-secondary-foreground transition-colors hover:bg-sun" data-tsd-source="/src/components/lab/ModelExplorer.tsx:139:17"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb size-4" aria-hidden="true" data-tsd-source="/src/components/lab/ModelExplorer.tsx:145:19"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>ดูคำใบ้</button></div></li><li class="rounded-2xl border-2 p-3 transition-colors border-border bg-background" data-tsd-source="/src/components/lab/ModelExplorer.tsx:116:13"><div class="flex gap-3" data-tsd-source="/src/components/lab/ModelExplorer.tsx:123:15"><button type="button" aria-pressed="false" aria-label="ทำภารกิจที่ 3 สำเร็จแล้ว" class="grid size-11 shrink-0 place-items-center rounded-full font-display text-lg font-bold transition-all active:scale-90 bg-sun text-secondary-foreground" data-tsd-source="/src/components/lab/ModelExplorer.tsx:124:17">3</button><p class="pt-1.5 leading-relaxed" data-tsd-source="/src/components/lab/ModelExplorer.tsx:136:17">ซูมเข้าไปตรงกลางดอก ส่วนไหนอยู่ตรงกลางสุด และส่วนไหนยืนล้อมรอบอยู่?</p></div><div class="mt-2 flex flex-wrap gap-2 pl-14" data-tsd-source="/src/components/lab/ModelExplorer.tsx:138:15"><button type="button" aria-expanded="false" class="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-sun-soft px-4 text-sm font-semibold text-secondary-foreground transition-colors hover:bg-sun" data-tsd-source="/src/components/lab/ModelExplorer.tsx:139:17"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb size-4" aria-hidden="true" data-tsd-source="/src/components/lab/ModelExplorer.tsx:145:19"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>ดูคำใบ้</button></div></li></ol></div></section></div><section aria-label="แผงเรียนรู้และเกม" class="rounded-[2rem] border-2 border-border bg-card p-3 shadow-soft sm:p-5" data-tsd-source="/src/components/lab/LearningPanel.tsx:18:5"><div dir="ltr" data-orientation="horizontal" data-tsd-source="/src/components/lab/LearningPanel.tsx:19:7"><div role="tablist" aria-orientation="horizontal" class="items-center justify-center text-muted-foreground grid h-auto w-full grid-cols-3 gap-1.5 rounded-3xl bg-muted p-1.5" data-tsd-source="/src/components/lab/LearningPanel.tsx:20:9" tabindex="-1" data-orientation="horizontal" style="outline:none"><button type="button" role="tab" aria-selected="true" aria-controls="radix-_R_aaq_-content-parts" data-state="active" id="radix-_R_aaq_-trigger-parts" class="items-center justify-center ring-offset-background cursor-pointer transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed data-[state=active]:shadow flex h-auto min-h-16 flex-col gap-1 whitespace-normal rounded-2xl px-2 py-2 text-center font-display text-sm font-semibold leading-tight text-muted-foreground sm:text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-pop" data-tsd-source="/src/components/lab/LearningPanel.tsx:22:13" tabindex="-1" data-orientation="horizontal" data-radix-collection-item=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flower2 lucide-flower-2 size-6" aria-hidden="true" data-tsd-source="/src/components/lab/LearningPanel.tsx:23:15"><path d="M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1"></path><circle cx="12" cy="8" r="2"></circle><path d="M12 10v12"></path><path d="M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z"></path><path d="M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z"></path></svg>รู้จัก 4 ส่วนของดอก</button><button type="button" role="tab" aria-selected="false" aria-controls="radix-_R_aaq_-content-types" data-state="inactive" id="radix-_R_aaq_-trigger-types" class="items-center justify-center ring-offset-background cursor-pointer transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed data-[state=active]:shadow flex h-auto min-h-16 flex-col gap-1 whitespace-normal rounded-2xl px-2 py-2 text-center font-display text-sm font-semibold leading-tight text-muted-foreground sm:text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-pop" data-tsd-source="/src/components/lab/LearningPanel.tsx:22:13" tabindex="-1" data-orientation="horizontal" data-radix-collection-item=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shapes size-6" aria-hidden="true" data-tsd-source="/src/components/lab/LearningPanel.tsx:23:15"><path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"></path><rect x="3" y="14" width="7" height="7" rx="1"></rect><circle cx="17.5" cy="17.5" r="3.5"></circle></svg>ชนิดของดอกไม้</button><button type="button" role="tab" aria-selected="false" aria-controls="radix-_R_aaq_-content-quiz" data-state="inactive" id="radix-_R_aaq_-trigger-quiz" class="items-center justify-center ring-offset-background cursor-pointer transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed data-[state=active]:shadow flex h-auto min-h-16 flex-col gap-1 whitespace-normal rounded-2xl px-2 py-2 text-center font-display text-sm font-semibold leading-tight text-muted-foreground sm:text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-pop" data-tsd-source="/src/components/lab/LearningPanel.tsx:22:13" tabindex="-1" data-orientation="horizontal" data-radix-collection-item=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2 lucide-gamepad-2 size-6" aria-hidden="true" data-tsd-source="/src/components/lab/LearningPanel.tsx:23:15"><line x1="6" x2="10" y1="11" y2="11"></line><line x1="8" x2="8" y1="9" y2="13"></line><line x1="15" x2="15.01" y1="12" y2="12"></line><line x1="18" x2="18.01" y1="10" y2="10"></line><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path></svg>เกมทายใจนักวิทย์ ป.4</button></div><div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-_R_aaq_-trigger-parts" id="radix-_R_aaq_-content-parts" tabindex="0" class="ring-offset-background focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-offset-2 mt-5 px-1 focus-visible:ring-0" data-tsd-source="/src/components/lab/LearningPanel.tsx:29:11" style="animation-duration:0s"><div class="flex flex-col gap-4" data-tsd-source="/src/components/lab/PartsTab.tsx:13:5"><p class="text-muted-foreground" data-tsd-source="/src/components/lab/PartsTab.tsx:14:7">ดอกไม้มี 4 ส่วน เรียงจากวงนอกสุดเข้าไปถึงตรงกลาง กดเลือกดูทีละส่วนได้เลย 👇</p><div class="grid grid-cols-2 gap-3" role="group" aria-label="เลือกส่วนของดอกไม้" data-tsd-source="/src/components/lab/PartsTab.tsx:16:7"><button type="button" aria-pressed="true" class="flex min-h-20 items-center gap-3 rounded-2xl border-2 p-3 text-left transition-all active:scale-[0.97] border-leaf bg-leaf-soft shadow-soft" data-tsd-source="/src/components/lab/PartsTab.tsx:21:13"><span class="grid size-10 shrink-0 place-items-center rounded-full font-display text-lg font-bold bg-leaf text-primary-foreground" data-tsd-source="/src/components/lab/PartsTab.tsx:31:15">1</span><span class="min-w-0" data-tsd-source="/src/components/lab/PartsTab.tsx:39:15"><span class="block font-display text-lg font-semibold leading-tight" data-tsd-source="/src/components/lab/PartsTab.tsx:40:17">กลีบเลี้ยง</span><span class="block text-sm text-muted-foreground" data-tsd-source="/src/components/lab/PartsTab.tsx:41:17">Sepal</span></span></button><button type="button" aria-pressed="false" class="flex min-h-20 items-center gap-3 rounded-2xl border-2 p-3 text-left transition-all active:scale-[0.97] border-border bg-card hover:bg-muted" data-tsd-source="/src/components/lab/PartsTab.tsx:21:13"><span class="grid size-10 shrink-0 place-items-center rounded-full font-display text-lg font-bold bg-blossom text-accent-foreground" data-tsd-source="/src/components/lab/PartsTab.tsx:31:15">2</span><span class="min-w-0" data-tsd-source="/src/components/lab/PartsTab.tsx:39:15"><span class="block font-display text-lg font-semibold leading-tight" data-tsd-source="/src/components/lab/PartsTab.tsx:40:17">กลีบดอก</span><span class="block text-sm text-muted-foreground" data-tsd-source="/src/components/lab/PartsTab.tsx:41:17">Petal</span></span></button><button type="button" aria-pressed="false" class="flex min-h-20 items-center gap-3 rounded-2xl border-2 p-3 text-left transition-all active:scale-[0.97] border-border bg-card hover:bg-muted" data-tsd-source="/src/components/lab/PartsTab.tsx:21:13"><span class="grid size-10 shrink-0 place-items-center rounded-full font-display text-lg font-bold bg-sun text-secondary-foreground" data-tsd-source="/src/components/lab/PartsTab.tsx:31:15">3</span><span class="min-w-0" data-tsd-source="/src/components/lab/PartsTab.tsx:39:15"><span class="block font-display text-lg font-semibold leading-tight" data-tsd-source="/src/components/lab/PartsTab.tsx:40:17">เกสรเพศผู้</span><span class="block text-sm text-muted-foreground" data-tsd-source="/src/components/lab/PartsTab.tsx:41:17">Stamen</span></span></button><button type="button" aria-pressed="false" class="flex min-h-20 items-center gap-3 rounded-2xl border-2 p-3 text-left transition-all active:scale-[0.97] border-border bg-card hover:bg-muted" data-tsd-source="/src/components/lab/PartsTab.tsx:21:13"><span class="grid size-10 shrink-0 place-items-center rounded-full font-display text-lg font-bold bg-marigold text-ink" data-tsd-source="/src/components/lab/PartsTab.tsx:31:15">4</span><span class="min-w-0" data-tsd-source="/src/components/lab/PartsTab.tsx:39:15"><span class="block font-display text-lg font-semibold leading-tight" data-tsd-source="/src/components/lab/PartsTab.tsx:40:17">เกสรเพศเมีย</span><span class="block text-sm text-muted-foreground" data-tsd-source="/src/components/lab/PartsTab.tsx:41:17">Pistil</span></span></button></div><article class="animate-pop-in rounded-3xl border-2 p-5 border-leaf bg-leaf-soft" data-tsd-source="/src/components/lab/PartsTab.tsx:48:7"><header class="mb-4 flex items-baseline gap-2" data-tsd-source="/src/components/lab/PartsTab.tsx:49:9"><h3 class="text-2xl font-bold" data-tsd-source="/src/components/lab/PartsTab.tsx:50:11">กลีบเลี้ยง</h3><span class="font-display text-muted-foreground" data-tsd-source="/src/components/lab/PartsTab.tsx:51:11">(<!-- -->Sepal<!-- -->)</span></header><dl class="flex flex-col gap-3" data-tsd-source="/src/components/lab/PartsTab.tsx:54:9"><div class="flex gap-3" data-tsd-source="/src/components/lab/PartsTab.tsx:87:5"><span class="grid size-9 shrink-0 place-items-center rounded-full bg-card text-primary-deep" data-tsd-source="/src/components/lab/PartsTab.tsx:88:7"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin size-5" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></span><div data-tsd-source="/src/components/lab/PartsTab.tsx:89:7"><dt class="font-display font-semibold text-primary-deep" data-tsd-source="/src/components/lab/PartsTab.tsx:90:9">อยู่ที่ตรงไหน</dt><dd data-tsd-source="/src/components/lab/PartsTab.tsx:91:9">อยู่วงนอกสุดของดอก ติดกับก้านดอก มักมีสีเขียวคล้ายใบไม้เล็ก ๆ</dd></div></div><div class="flex gap-3" data-tsd-source="/src/components/lab/PartsTab.tsx:87:5"><span class="grid size-9 shrink-0 place-items-center rounded-full bg-card text-primary-deep" data-tsd-source="/src/components/lab/PartsTab.tsx:88:7"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench size-5" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></svg></span><div data-tsd-source="/src/components/lab/PartsTab.tsx:89:7"><dt class="font-display font-semibold text-primary-deep" data-tsd-source="/src/components/lab/PartsTab.tsx:90:9">ทำหน้าที่อะไร</dt><dd data-tsd-source="/src/components/lab/PartsTab.tsx:91:9">ห่อหุ้มและป้องกันอันตรายให้ดอกตูม ตอนที่ดอกยังไม่บาน</dd></div></div></dl><div class="mt-4 flex gap-3 rounded-2xl bg-card p-4" data-tsd-source="/src/components/lab/PartsTab.tsx:73:9"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles mt-1 size-5 shrink-0 text-marigold" aria-hidden="true" data-tsd-source="/src/components/lab/PartsTab.tsx:74:11"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><div data-tsd-source="/src/components/lab/PartsTab.tsx:75:11"><p class="font-display font-semibold text-oops" data-tsd-source="/src/components/lab/PartsTab.tsx:76:13">ทริคจำง่าย ๆ</p><p data-tsd-source="/src/components/lab/PartsTab.tsx:77:13">กลีบเลี้ยง = “พี่เลี้ยงใจดี” คอยกอดน้องดอกตูมไว้ ไม่ให้ใครมาทำให้เจ็บ 🤗</p></div></div></article></div></div><div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-_R_aaq_-trigger-types" hidden="" id="radix-_R_aaq_-content-types" tabindex="0" class="ring-offset-background focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-offset-2 mt-5 px-1 focus-visible:ring-0" data-tsd-source="/src/components/lab/LearningPanel.tsx:29:11"></div><div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-_R_aaq_-trigger-quiz" hidden="" id="radix-_R_aaq_-content-quiz" tabindex="0" class="ring-offset-background focus-visible:outline-none focus-visible:ring-ring focus-visible:ring-offset-2 mt-5 px-1 focus-visible:ring-0" data-tsd-source="/src/components/lab/LearningPanel.tsx:29:11"></div></div></section></main><footer class="pb-8 text-center text-sm text-muted-foreground" data-tsd-source="/src/routes/index.tsx:49:7">เรียนสนุก รู้จริง เป็นนักวิทยาศาสตร์ตัวน้อยกันนะ 🌱</footer></div><script>(function(a,f){let l;try{l=JSON.parse(sessionStorage.getItem(a)||"{}")}catch{return}const n=l?.[f||history.state?.__TSR_key];let c=!1;for(const t in n){const e=n[t],o=e?.scrollX,s=e?.scrollY;if(Number.isFinite(o)&&Number.isFinite(s)){if(t==="window")scrollTo(o,s),c=!0;else if(t)try{const r=document.querySelector(t);r&&(r.scrollLeft=o,r.scrollTop=s)}catch{}}}if(c)return;const i=location.hash.slice(1);if(i){const t=history.state?.__hashScrollIntoViewOptions??!0;if(t){const e=document.getElementById(i);e&&e.scrollIntoView(t)}return}scrollTo(0,0)})("tsr-scroll-restoration-v1_3");document.currentScript.remove()</script><!--/$--><script data-tsr-stream-part="">(self.$R=self.$R||{})["tsr"]=[];self.$_TSR={h(){this.hydrated=!0,this.c()},e(){this.streamEnded=!0,this.c()},c(){this.hydrated&&this.streamEnded&&(delete self.$_TSR,delete self.$R.tsr)},p(e){this.initialized?e():this.buffer.push(e)},buffer:[]};$_TSR.router=($R=>$R[0]={manifest:$R[1]={routes:$R[2]={__root__:$R[3]={preloads:$R[4]=["/assets/index-B9Zb3LJQ.js"],scripts:$R[5]=[$R[6]={attrs:$R[7]={type:"module",async:!0,src:"/assets/index-B9Zb3LJQ.js"}}]},"/":$R[8]={preloads:$R[9]=["/assets/routes-DxKy2NQC.js"]}}},matches:$R[10]=[$R[11]={i:"__root__ ",u:1795266064679,s:"success",ssr:!0},$R[12]={i:"  ",u:1795266064679,s:"success",ssr:!0}]})($R["tsr"]);$_TSR.e();{let s=document.currentScript,p;while((p=s.previousElementSibling)&&p.hasAttribute('data-tsr-stream-part'))p.remove();s.remove()}</script><script type="module" async="" src="/assets/index-B9Zb3LJQ.js"></script><script>document.currentScript.remove();/*$tsr-stream-boundary*/</script>
+<aside
+	id="lovable-badge"
+	role="complementary"
+	dir="ltr"
+	lang="en"
+	aria-label="Edit with Lovable">
+	<a
+		id="lovable-badge-cta" 
+		target="_blank" 
+		href="https://lovable.dev/projects/lovp_1xt25btqpp85tamvr3k0g7vv6x?utm_source=lovable-badge"
+		rel="noopener nofollow"
+		aria-label="Edit with Lovable">
+		<span id="lovable-badge-text">Edit with</span>
+		<span id="lovable-badge-logo"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="16" fill="none" viewBox="0 0 52 16">
+  <path fill="#FCFBF8" fill-rule="evenodd" d="M20.318 5.25c.643 0 1.206.14 1.69.418a2.81 2.81 0 0 1 1.118 1.191c.266.513.4 1.115.4 1.807s-.134 1.296-.4 1.812a2.81 2.81 0 0 1-1.118 1.193c-.484.278-1.047.418-1.69.418s-1.208-.14-1.695-.418a2.85 2.85 0 0 1-1.125-1.193c-.262-.516-.393-1.12-.393-1.812s.131-1.294.393-1.807a2.848 2.848 0 0 1 1.125-1.191c.487-.279 1.052-.418 1.695-.418Zm0 1.425c-.27 0-.504.076-.7.228-.193.147-.34.37-.443.67-.102.295-.153.66-.153 1.093 0 .435.05.801.153 1.1.102.3.25.524.443.676.196.147.43.22.7.22.27 0 .502-.073.694-.22.193-.152.341-.375.443-.67.103-.299.153-.667.153-1.106 0-.65-.112-1.145-.337-1.481a1.08 1.08 0 0 0-.953-.51ZM32.7 5.25c.61 0 1.127.1 1.549.3.422.197.74.48.953.849.217.368.325.809.325 1.32v2.704c0 .29.02.562.062.812.044.245.108.4.19.466V12h-1.935a5.895 5.895 0 0 1-.105-.684 7.745 7.745 0 0 1-.02-.228 2.293 2.293 0 0 1-.151.203c-.205.242-.47.437-.793.584-.32.143-.685.215-1.094.215-.406 0-.77-.08-1.094-.24a1.845 1.845 0 0 1-.756-.682 1.984 1.984 0 0 1-.27-1.045c0-.606.178-1.069.535-1.388.356-.324.87-.534 1.542-.633l1.125-.16c.225-.032.403-.074.534-.123a.622.622 0 0 0 .288-.196.549.549 0 0 0 .093-.327.65.65 0 0 0-.11-.367.702.702 0 0 0-.32-.27c-.14-.07-.31-.105-.51-.105-.32 0-.576.083-.768.251-.193.164-.298.39-.314.676h-1.923c.016-.434.147-.82.393-1.155.25-.34.596-.604 1.039-.792.442-.189.954-.283 1.535-.283Zm.99 3.498a.98.98 0 0 1-.215.14 2.49 2.49 0 0 1-.584.178l-.473.092c-.315.061-.553.156-.713.283-.155.127-.233.305-.233.534 0 .23.084.412.252.547.168.135.383.203.645.203s.494-.058.694-.173c.201-.118.355-.282.461-.49.11-.21.166-.448.166-.714v-.6Zm4.526-2.375c.065-.125.138-.243.221-.349.197-.25.437-.44.719-.571.282-.135.6-.203.952-.203.528 0 .988.138 1.377.412.389.275.688.67.896 1.186.21.512.314 1.12.314 1.824 0 .7-.107 1.309-.32 1.825-.213.512-.518.906-.915 1.18-.393.275-.854.412-1.383.412-.352 0-.667-.062-.946-.184a1.832 1.832 0 0 1-.7-.554 2.2 2.2 0 0 1-.234-.383V12h-1.843V3h1.862v3.373Zm1.284.296c-.274 0-.51.085-.707.253-.192.163-.338.397-.436.7a3.376 3.376 0 0 0-.148 1.05c0 .406.05.759.148 1.058.098.299.243.53.436.694.197.164.433.246.707.246.279 0 .512-.082.7-.246.193-.164.336-.395.43-.694.099-.3.148-.652.148-1.058 0-.405-.05-.757-.147-1.056-.095-.299-.238-.53-.43-.694a1.015 1.015 0 0 0-.7-.253Zm9.416-1.419c.602 0 1.136.131 1.604.393.466.262.829.643 1.086 1.143.263.5.394 1.097.394 1.794 0 .25-.002.449-.006.596H47.51c.018.288.071.538.164.75a1.3 1.3 0 0 0 .491.596c.214.13.465.196.757.196.319 0 .583-.082.792-.246.209-.167.34-.403.393-.706h1.862a2.48 2.48 0 0 1-.485 1.235 2.54 2.54 0 0 1-1.051.805c-.439.188-.949.283-1.53.283-.655 0-1.225-.125-1.708-.375a2.672 2.672 0 0 1-1.13-1.143c-.267-.508-.4-1.137-.4-1.887 0-.712.14-1.327.418-1.843a2.86 2.86 0 0 1 1.155-1.186c.491-.27 1.051-.405 1.678-.405Zm-.044 1.345c-.274 0-.516.068-.725.203a1.29 1.29 0 0 0-.479.59 2.045 2.045 0 0 0-.132.498h2.562a1.873 1.873 0 0 0-.138-.602 1.061 1.061 0 0 0-.418-.516 1.243 1.243 0 0 0-.67-.173Z" clip-rule="evenodd"/>
+  <path fill="#FCFBF8" d="m26.605 9.995 1.342-4.566h1.924L27.628 12h-2.07l-2.33-6.57h1.98l1.397 4.565Zm-13.013.143h2.256c1.632 0 1.421 1.837 1.418 1.861h-5.603V3h1.93v7.138Zm31.516 1.861h-1.862V3h1.862v8.999Z"/>
+  <path fill="url(#a)" fill-rule="evenodd" d="M2.7 3c1.492 0 2.7 1.192 2.7 2.663v1.012h.9c1.49 0 2.7 1.192 2.7 2.662S7.791 12 6.3 12H0V5.663C0 4.193 1.209 3 2.7 3Z" clip-rule="evenodd"/>
+  <defs>
+    <radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(-1.54236 7.07838 -10.231 -2.15602 4.627 5.022)" gradientUnits="userSpaceOnUse">
+      <stop offset=".106" stop-color="#FE7B02"/>
+      <stop offset=".394" stop-color="#FE3F21"/>
+      <stop offset=".608" stop-color="#F858BC"/>
+      <stop offset=".929" stop-color="#575ECF"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+</span>
+	</a>
+	
+	<span id="lovable-badge-divider" aria-hidden="true"></span>
+	
+	<button 
+		id="lovable-badge-close"
+		aria-label="Dismiss"
+		title="Dismiss"
+		type="button">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+			<path d="M10.646 4.646a.5.5 0 1 1 .707.708L8.707 8l2.646 2.646a.5.5 0 1 1-.707.707L8 8.707l-2.646 2.646a.5.5 0 1 1-.708-.707L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708L8 7.293l2.646-2.647Z"/>
+		</svg>
+	</button>
+</aside>
+<script>
+	(() => {
+		if (window.self !== window.top || navigator.userAgent.includes('puppeteer')) {
+			const badge = document.querySelector('#lovable-badge');
+			if (badge) {
+				badge.style.display = 'none';
+			}
+			return;
+		}
+
+		const closeButton = document.querySelector('#lovable-badge-close');
+		if (closeButton) {
+			closeButton.addEventListener('click', function(event) {
+				event.preventDefault();
+				event.stopPropagation();
+				const badge = document.querySelector('#lovable-badge');
+				if (badge) {
+					badge.classList.add('closing');
+					setTimeout(function() {
+						if (badge) {
+							badge.style.display = 'none';
+						}
+					}, 240);
+				}
+			});
+		}
+	})();
+</script>
+<script src="https://cdn.gpteng.co/lovable.js" type="module"></script></body></html>
